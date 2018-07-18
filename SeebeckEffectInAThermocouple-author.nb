@@ -1,0 +1,794 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     29397,        785]
+NotebookOptionsPosition[     26071,        683]
+NotebookOutlinePosition[     27662,        734]
+CellTagsIndexPosition[     27342,        722]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Seebeck Effect in a Thermocouple\
+\>", "DemoTitle",
+ CellChangeTimes->{{3.59386343565625*^9, 3.593863436734375*^9}, {
+  3.59386350878125*^9, 3.593863522609375*^9}, {3.595622240139494*^9, 
+  3.5956222432728076`*^9}}],
+
+Cell["", "InitializationSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"T2", "=", "290"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Thickness", "[", "0.05", "]"}], ",", "Red", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"1", ",", "2"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2", ",", "3"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"6", ",", "3"}], "}"}]}], "}"}], "]"}], ",", "Blue", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"1", ",", "2"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2", ",", "1"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"6", ",", "1"}], "}"}]}], "}"}], "]"}], ",", 
+        RowBox[{"Hue", "[", 
+         RowBox[{"40", "/", "T1"}], "]"}], ",", 
+        RowBox[{"Disk", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "2"}], "}"}], ",", "0.6"}], "]"}], ",", "White", 
+        ",", "\[IndentingNewLine]", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"Pb", ",", "16"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"4", ",", "1"}], "}"}]}], "]"}], ",", "Black", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{
+            RowBox[{"\[Alpha]", "*", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"T1", "-", "T2"}], ")"}], "/", "1000."}]}], ",", 
+            "16"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"7", ",", "2"}], "}"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"mV", ",", "16"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"9", ",", "2"}], "}"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{
+           "\"\<thermoelectric values for some metals\\n relative to Pb for \
+\[Alpha]\\n in the range \[PlusMinus]5 mv/K\>\"", ",", "16"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"4", ",", "8"}], "}"}]}], "]"}], ",", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"mV", ",", "16"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"9", ",", "2"}], "}"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\[Alpha]", " ", ",", "16"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"4", ",", "3"}], "}"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{
+           "\"\<\!\(\*SubscriptBox[\(T\), \(2\)]\) = 290 K\>\"", ",", "16"}], 
+           "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"8", ",", "0"}], "}"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{
+            RowBox[{"Row", "[", 
+             RowBox[{"{", 
+              RowBox[{"T1", ",", "\"\< K\>\""}], "}"}], "]"}], ",", "16"}], 
+           "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0"}], "}"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{
+           "\"\<\!\(\*SubscriptBox[\(T\), \(1\)]\) = \>\"", ",", "16"}], 
+           "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1.1"}], ",", "0"}], "}"}]}], "]"}]}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "2"}], ",", "10"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "1"}], ",", "10"}], "}"}]}], "}"}]}]}], "]"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"T1", ",", "290", ",", "400", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Alpha]", ",", 
+     RowBox[{"-", "5"}], ",", "5"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.593863438921875*^9, 3.595622190070488*^9, {3.59716315809262*^9, 
+   3.597163296226988*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`T1$$ = 290, $CellContext`\[Alpha]$$ = -5, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`T1$$], 290, 400, 1}, {
+      Hold[$CellContext`\[Alpha]$$], -5, 5}}, Typeset`size$$ = {
+    360., {163., 167.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`T1$4333$$ = 
+    0, $CellContext`\[Alpha]$4334$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`T1$$ = 290, $CellContext`\[Alpha]$$ = -5}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`T1$$, $CellContext`T1$4333$$, 0], 
+        Hold[$CellContext`\[Alpha]$$, $CellContext`\[Alpha]$4334$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`T2 = 290; Graphics[{
+          Thickness[0.05], Red, 
+          Line[{{1, 2}, {2, 3}, {6, 3}}], Blue, 
+          Line[{{1, 2}, {2, 1}, {6, 1}}], 
+          Hue[40/$CellContext`T1$$], 
+          Disk[{1, 2}, 0.6], White, 
+          Text[
+           Style[$CellContext`Pb, 16], {4, 1}], Black, 
+          Text[
+           
+           Style[$CellContext`\[Alpha]$$ (($CellContext`T1$$ - \
+$CellContext`T2)/1000.), 16], {7, 2}], 
+          Text[
+           Style[$CellContext`mV, 16], {9, 2}], 
+          Text[
+           Style[
+           "thermoelectric values for some metals\n relative to Pb for \
+\[Alpha]\n in the range \[PlusMinus]5 mv/K", 16], {4, 8}], 
+          Text[
+           Style[$CellContext`mV, 16], {9, 2}], 
+          Text[
+           Style[$CellContext`\[Alpha]$$, 16], {4, 3}], 
+          Text[
+           Style["\!\(\*SubscriptBox[\(T\), \(2\)]\) = 290 K", 16], {8, 0}], 
+          Text[
+           Style[
+            Row[{$CellContext`T1$$, " K"}], 16], {0, 0}], 
+          Text[
+           Style["\!\(\*SubscriptBox[\(T\), \(1\)]\) = ", 16], {-1.1, 0}]}, 
+         PlotRange -> {{-2, 10}, {-1, 10}}]), 
+      "Specifications" :> {{$CellContext`T1$$, 290, 400, 
+         1}, {$CellContext`\[Alpha]$$, -5, 5}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{403., {220., 225.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.597165822105503*^9},
+ CellID->2030698216]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell[TextData[{
+ "Thermoelectric phenomena include the relationship between thermal and \
+electrical phenomena in metals and semiconductors. Included among these are \
+the Seebeck, Peltier, and Thomson effects. In the Seebeck effect, a closed \
+circuit consisting of dissimilar conductors produces an emf across contacts \
+maintained at different temperatures. In the simplest case, when the \
+electrical circuit is composed of two different conductors, the system is \
+called a thermopile (or a thermocouple). The value of the thermoelectric \
+power depends only on the temperatures ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["T", "1"], TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["T", "2"], TraditionalForm]], "InlineMath"],
+ " of the hot and cold contacts and on the composition of the conductors. For \
+a small temperature range, thermoelectric power ",
+ Cell[BoxData[
+  FormBox["E", TraditionalForm]], "InlineMath"],
+ " is approximately proportional to the temperature difference, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"E", "=", 
+    RowBox[{"\[Alpha]", "(", 
+     RowBox[{
+      SubscriptBox["T", "1"], "-", 
+      SubscriptBox["T", "2"]}], ")"}]}], TraditionalForm]], "InlineMath"],
+ ". The coefficient ",
+ Cell[BoxData[
+  FormBox["\[Alpha]", TraditionalForm]], "InlineMath",
+  FormatType->"TraditionalForm"],
+ " is called the Seebeck coefficient or thermoelectric power density. It \
+depends on the conductor materials and the temperature range. Values are \
+given for some coefficients with respect to Pb in the temperature range 0 to \
+100 \[Degree]C."
+}], "ManipulateCaption",
+ CellChangeTimes->{
+  3.59386348290625*^9, {3.595622097062188*^9, 3.5956221516056414`*^9}, 
+   3.595622220664547*^9, {3.597165861523745*^9, 3.5971659177206173`*^9}, {
+   3.5971660023202744`*^9, 3.597166150743215*^9}, {3.597166196686195*^9, 
+   3.59716620390105*^9}, {3.597166265301268*^9, 3.597166519016204*^9}, {
+   3.597166565334648*^9, 3.597166626692487*^9}, {3.597166676739256*^9, 
+   3.597166714856963*^9}, 3.597166762018058*^9, {3.5971668321723213`*^9, 
+   3.597166847009523*^9}, {3.597168503646895*^9, 3.5971685451714277`*^9}, {
+   3.597168585459734*^9, 3.597168644010639*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`T1$$ = 358, $CellContext`\[Alpha]$$ = -2.78,
+     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`T1$$], 358}, 290, 400, 1}, {{
+       Hold[$CellContext`\[Alpha]$$], -2.78}, -5, 5}}, Typeset`size$$ = {
+    360., {163., 167.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`T1$21609$$ = 
+    0, $CellContext`\[Alpha]$21610$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`T1$$ = 
+        358, $CellContext`\[Alpha]$$ = -2.78}, "ControllerVariables" :> {
+        Hold[$CellContext`T1$$, $CellContext`T1$21609$$, 0], 
+        Hold[$CellContext`\[Alpha]$$, $CellContext`\[Alpha]$21610$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`T2 = 290; Graphics[{
+          Thickness[0.05], Red, 
+          Line[{{1, 2}, {2, 3}, {6, 3}}], Blue, 
+          Line[{{1, 2}, {2, 1}, {6, 1}}], 
+          Hue[40/$CellContext`T1$$], 
+          Disk[{1, 2}, 0.6], White, 
+          Text[
+           Style[$CellContext`Pb, 16], {4, 1}], Black, 
+          Text[
+           
+           Style[$CellContext`\[Alpha]$$ (($CellContext`T1$$ - \
+$CellContext`T2)/1000.), 16], {7, 2}], 
+          Text[
+           Style[$CellContext`mV, 16], {9, 2}], 
+          Text[
+           Style[
+           "thermoelectric values for some metals\n relative to Pb for \
+\[Alpha]\n in the range \[PlusMinus]5 mv/K", 16], {4, 8}], 
+          Text[
+           Style[$CellContext`mV, 16], {9, 2}], 
+          Text[
+           Style[$CellContext`\[Alpha]$$, 16], {4, 3}], 
+          Text[
+           Style["\!\(\*SubscriptBox[\(T\), \(2\)]\) = 290 K", 16], {8, 0}], 
+          Text[
+           Style[
+            Row[{$CellContext`T1$$, " K"}], 16], {0, 0}], 
+          Text[
+           Style["\!\(\*SubscriptBox[\(T\), \(1\)]\) = ", 16], {-1.1, 0}]}, 
+         PlotRange -> {{-2, 10}, {-1, 10}}]), 
+      "Specifications" :> {{{$CellContext`T1$$, 358}, 290, 400, 
+         1}, {{$CellContext`\[Alpha]$$, -2.78}, -5, 5}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{403., {220., 225.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->749576019]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`T1$$ = 370, $CellContext`\[Alpha]$$ = -2.26,
+     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`T1$$], 370}, 290, 400, 1}, {{
+       Hold[$CellContext`\[Alpha]$$], -2.26}, -5, 5}}, Typeset`size$$ = {
+    360., {163., 167.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`T1$21664$$ = 
+    0, $CellContext`\[Alpha]$21665$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`T1$$ = 
+        370, $CellContext`\[Alpha]$$ = -2.26}, "ControllerVariables" :> {
+        Hold[$CellContext`T1$$, $CellContext`T1$21664$$, 0], 
+        Hold[$CellContext`\[Alpha]$$, $CellContext`\[Alpha]$21665$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`T2 = 290; Graphics[{
+          Thickness[0.05], Red, 
+          Line[{{1, 2}, {2, 3}, {6, 3}}], Blue, 
+          Line[{{1, 2}, {2, 1}, {6, 1}}], 
+          Hue[40/$CellContext`T1$$], 
+          Disk[{1, 2}, 0.6], White, 
+          Text[
+           Style[$CellContext`Pb, 16], {4, 1}], Black, 
+          Text[
+           
+           Style[$CellContext`\[Alpha]$$ (($CellContext`T1$$ - \
+$CellContext`T2)/1000.), 16], {7, 2}], 
+          Text[
+           Style[$CellContext`mV, 16], {9, 2}], 
+          Text[
+           Style[
+           "thermoelectric values for some metals\n relative to Pb for \
+\[Alpha]\n in the range \[PlusMinus]5 mv/K", 16], {4, 8}], 
+          Text[
+           Style[$CellContext`mV, 16], {9, 2}], 
+          Text[
+           Style[$CellContext`\[Alpha]$$, 16], {4, 3}], 
+          Text[
+           Style["\!\(\*SubscriptBox[\(T\), \(2\)]\) = 290 K", 16], {8, 0}], 
+          Text[
+           Style[
+            Row[{$CellContext`T1$$, " K"}], 16], {0, 0}], 
+          Text[
+           Style["\!\(\*SubscriptBox[\(T\), \(1\)]\) = ", 16], {-1.1, 0}]}, 
+         PlotRange -> {{-2, 10}, {-1, 10}}]), 
+      "Specifications" :> {{{$CellContext`T1$$, 370}, 290, 400, 
+         1}, {{$CellContext`\[Alpha]$$, -2.26}, -5, 5}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{403., {220., 225.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->985078031],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`T1$$ = 370, $CellContext`\[Alpha]$$ = -2.26,
+     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`T1$$], 370}, 290, 400, 1}, {{
+       Hold[$CellContext`\[Alpha]$$], -2.26}, -5, 5}}, Typeset`size$$ = {
+    360., {163., 167.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`T1$21719$$ = 
+    0, $CellContext`\[Alpha]$21720$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`T1$$ = 
+        370, $CellContext`\[Alpha]$$ = -2.26}, "ControllerVariables" :> {
+        Hold[$CellContext`T1$$, $CellContext`T1$21719$$, 0], 
+        Hold[$CellContext`\[Alpha]$$, $CellContext`\[Alpha]$21720$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`T2 = 290; Graphics[{
+          Thickness[0.05], Red, 
+          Line[{{1, 2}, {2, 3}, {6, 3}}], Blue, 
+          Line[{{1, 2}, {2, 1}, {6, 1}}], 
+          Hue[40/$CellContext`T1$$], 
+          Disk[{1, 2}, 0.6], White, 
+          Text[
+           Style[$CellContext`Pb, 16], {4, 1}], Black, 
+          Text[
+           
+           Style[$CellContext`\[Alpha]$$ (($CellContext`T1$$ - \
+$CellContext`T2)/1000.), 16], {7, 2}], 
+          Text[
+           Style[$CellContext`mV, 16], {9, 2}], 
+          Text[
+           Style[
+           "thermoelectric values for some metals\n relative to Pb for \
+\[Alpha]\n in the range \[PlusMinus]5 mv/K", 16], {4, 8}], 
+          Text[
+           Style[$CellContext`mV, 16], {9, 2}], 
+          Text[
+           Style[$CellContext`\[Alpha]$$, 16], {4, 3}], 
+          Text[
+           Style["\!\(\*SubscriptBox[\(T\), \(2\)]\) = 290 K", 16], {8, 0}], 
+          Text[
+           Style[
+            Row[{$CellContext`T1$$, " K"}], 16], {0, 0}], 
+          Text[
+           Style["\!\(\*SubscriptBox[\(T\), \(1\)]\) = ", 16], {-1.1, 0}]}, 
+         PlotRange -> {{-2, 10}, {-1, 10}}]), 
+      "Specifications" :> {{{$CellContext`T1$$, 370}, 290, 400, 
+         1}, {{$CellContext`\[Alpha]$$, -2.26}, -5, 5}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{403., {220., 225.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->1255032294]
+}, Open  ]],
+
+Cell["", "DetailsSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.597163350321308*^9},
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.597163351617091*^9},
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9, 
+  3.597163352581152*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.5971633537649727`*^9},
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell["", "SearchTermsSection"],
+
+Cell["", "RelatedLinksSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Andrew Tuzhykov",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Andrew+\
+Tuzhykov"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Andrew+Tuzhykov"]
+}], "Author",
+ CellChangeTimes->{{3.593863487984375*^9, 3.59386349546875*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{978, 596},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[19822, 508, 353, 9, 29, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[20178, 519, 678, 16, 29, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[20859, 537, 340, 11, 29, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[21202, 550, 637, 15, 29, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[21842, 567, 885, 22, 29, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[22730, 591, 393, 10, 29, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[23126, 603, 1507, 32, 29, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[24636, 637, 908, 21, 29, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 26450, 695},
+ {"RotateAndZoomIn3D", 26558, 698},
+ {"DragLocators", 26667, 701},
+ {"CreateAndDeleteLocators", 26782, 704},
+ {"SliderZoom", 26895, 707},
+ {"GamepadControls", 27000, 710},
+ {"AutomaticAnimation", 27113, 713},
+ {"BookmarkAnimation", 27229, 716}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 225, 5, 76, "DemoTitle"],
+Cell[807, 29, 33, 0, 275, "InitializationSection"],
+Cell[CellGroupData[{
+Cell[865, 33, 29, 0, 201, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[919, 37, 4611, 130, 233, "Input"],
+Cell[5533, 169, 2932, 66, 457, "Output",
+ CellID->2030698216]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8514, 241, 36, 0, 181, "ManipulateCaptionSection"],
+Cell[8553, 243, 2218, 45, 135, "ManipulateCaption"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10808, 293, 28, 0, 179, "ThumbnailSection"],
+Cell[10839, 295, 2935, 65, 457, "Output",
+ CellID->749576019]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13811, 365, 28, 0, 149, "SnapshotsSection"],
+Cell[13842, 367, 2935, 65, 457, "Output",
+ CellID->985078031],
+Cell[16780, 434, 2936, 65, 457, "Output",
+ CellID->1255032294]
+}, Open  ]],
+Cell[19731, 502, 26, 0, 357, "DetailsSection"],
+Cell[CellGroupData[{
+Cell[19782, 506, 37, 0, 119, "ControlSuggestionsSection"],
+Cell[19822, 508, 353, 9, 29, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[20178, 519, 678, 16, 29, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[20859, 537, 340, 11, 29, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[21202, 550, 637, 15, 29, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[21842, 567, 885, 22, 29, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[22730, 591, 393, 10, 29, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[23126, 603, 1507, 32, 29, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[24636, 637, 908, 21, 29, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[25559, 661, 30, 0, 165, "SearchTermsSection"],
+Cell[25592, 663, 31, 0, 137, "RelatedLinksSection"],
+Cell[CellGroupData[{
+Cell[25648, 667, 25, 0, 137, "AuthorSection"],
+Cell[25676, 669, 367, 10, 23, "Author"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
